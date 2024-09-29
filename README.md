@@ -37,8 +37,4 @@ pip install -r requirements.txt
 python manage.py migrate
 python run.py
 ```
-* Production
-```sh
-APPLICATION_ENV="Production" gunicorn -k gevent --bind 0.0.0.0:8080 run:app
-```
 
