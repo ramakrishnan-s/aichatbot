@@ -1,0 +1,61 @@
+
+Welcome Message (start conversation)
+
+```sh
+{
+    "enterprise_name":"accessnetworks",
+    "bot_name":"text",
+    "currentNode": "",
+    "complete": "None",
+	"sequence_id":0,
+    "context": {},
+    "parameters": [],
+    "extractedParameters": {},
+    "speechResponse": "",
+    "intent": {},
+    "input": "Hi",
+    "missingParameters": []
+}
+```
+
+
+```sh
+Restaurant search
+{
+    "enterprise_name": "accessnetworks",
+    "bot_name": "text",
+    "currentNode": "cuisine",
+    "complete": false,
+    "sequence_id": 2,
+    "context": {},
+    "parameters": [
+        {
+            "name": "location",
+            "type": "free_text",
+            "required": true
+        },
+        {
+            "name": "cuisine",
+            "type": "free_text",
+            "required": true
+        }
+    ],
+    "extractedParameters": {
+        "location": "malleswaram"
+    },
+    "speechResponse": [
+        "Ok. ",
+        " What type cuisine are you looking for?"
+    ],
+    "intent": {
+        "object_id": "66f53987b8b6906dea1af873",
+        "confidence": 0.9847961046915221,
+        "id": "restaurant_search"
+    },
+    "input": "Looking for a restaurant in malleswaram",
+    "missingParameters": [
+        "cuisine"
+    ]
+}
+
+```
