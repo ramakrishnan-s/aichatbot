@@ -1,0 +1,55 @@
+{
+		"name": "Affirm",
+		"enterprise_name": "accessnetworks",
+		"bot_name": "voice",
+		"trainingData": [
+			{
+				"text": "sounds really good",
+				"entities": []
+			},
+			{
+				"text": "great choice\n",
+				"entities": []
+			},
+			{
+				"text": "correct\n",
+				"entities": []
+			},
+			{
+				"text": "right, thank you\n",
+				"entities": []
+			},
+			{
+				"text": "great\n",
+				"entities": []
+			},
+			{
+				"text": "ok\n",
+				"entities": []
+			},
+			{
+				"text": "that's right\n",
+				"entities": []
+			},
+			{
+				"text": "indeed\n",
+				"entities": []
+			},
+			{
+				"text": "yeah\n",
+				"entities": []
+			},
+			{
+				"text": "yep\n",
+				"entities": []
+			},
+			{
+				"text": "yes\n",
+				"entities": []
+			}
+		],
+		"userDefined": true,
+		"apiTrigger": false,
+		"intentId": "affirm",
+		"speechResponse": "I'm glad that you agree"
+	}
