@@ -1,0 +1,43 @@
+{
+		"name": "Goodbye",
+		"enterprise_name": "accessnetworks",
+		"bot_name": "voice",
+		"trainingData": [
+			{
+				"text": "have a good one",
+				"entities": []
+			},
+			{
+				"text": "Bye bye\n",
+				"entities": []
+			},
+			{
+				"text": "farewell\n",
+				"entities": []
+			},
+			{
+				"text": "end\n",
+				"entities": []
+			},
+			{
+				"text": "stop\n",
+				"entities": []
+			},
+			{
+				"text": "good bye\n",
+				"entities": []
+			},
+			{
+				"text": "goodbye\n",
+				"entities": []
+			},
+			{
+				"text": "bye",
+				"entities": []
+			}
+		],
+		"userDefined": true,
+		"apiTrigger": false,
+		"intentId": "goodbye",
+		"speechResponse": "It was nice talking to you "
+	}
