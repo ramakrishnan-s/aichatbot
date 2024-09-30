@@ -1,0 +1,199 @@
+Create or update Bot
+--------------------
+POST - http://127.0.0.1:9080/agents/config
+
+{
+    "enterpriseName":"mitra",
+    "serviceName":"voice",
+    "confidence_threshold":0.50,
+    "modelDir":"generic"
+}
+
+PUT - http://127.0.0.1:9080/agents/config
+
+{
+    "enterpriseName":"mitra",
+    "serviceName":"voice",
+    "confidence_threshold":0.50,
+    "modelDir":"generic"
+}
+
+
+Train
+Add Intents
+
+http://192.168.0.30:9080/gateway/train
+[{text: "", entities: []}, {text: "i need masala dosai↵↵", entities: []},…]
+0
+: 
+{text: "", entities: []}
+1
+: 
+{text: "i need masala dosai↵↵", entities: []}
+2
+: 
+{text: "need cofee", entities: []}
+3
+: 
+{text: "Get me some cofee", entities: []}
+4
+: 
+{text: "I need food↵", entities: []}
+]
+
+Add Intent Name
+---------------
+POST
+http://192.168.0.30:9080/gateway/intents/
+{
+	"name": "fromlocation",
+	"intentId": "origin",
+	"userDefined": true,
+	"speechResponse": "from where you want to go?",
+	"apiTrigger": false,
+	"parameters": []
+}
+
+Update Intent
+--------------
+ (PUT)
+http://192.168.0.30:9080/gateway/intents/662a09b7a09917422e5f3653
+
+{"_id":"662a09b7a09917422e5f3653","name":"fromlocation","intentId":"origin","userDefined":true,"speechResponse":"from where you want to travel?","apiTrigger":false,"parameters":[]
+}
+
+{
+	"_id": "662a4015a09917422e5f3662",
+	"name": "cusine",
+	"intentId": "cusine_name",
+	"userDefined": true,
+	"speechResponse": "OK. can you say which specific food from {{parameters.cusine}} cusine",
+	"apiTrigger": false,
+	"parameters": [
+		{
+			"name": "cusine",
+			"type": "free_text",
+			"required": true,
+			"prompt": "Which cusine or type of food? Example: Indian, Chineese, Malabar"
+		}
+	]
+}
+
+Get Intents
+-----------
+http://192.168.0.30:9080/gateway/intents/
+
+Get Specific Intent
+-------------------
+http://192.168.0.30:9080/gateway/intents/662a01a2a09917422e5f3652
+http://192.168.0.30:9080/gateway/intents/59aae7bd26f6f60007b06fb5
+
+Creat Trainig Data - POST
+--------------------------
+
+http://192.168.0.30:9080/gateway/train/662a01a2a09917422e5f3652/data
+
+[{"text":"","entities":[]},{"text":"","entities":[]},{"text":"","entities":[]},{"text":"I want some idly and cofee","entities":[{"value":"idly ","begin":12,"end":17,"name":"food"},{"value":"cofee","begin":21,"end":26,"name":"orgin"}]},{"text":"","entities":[]},{"text":"i need masala dosai\n\n","entities":[{"value":"masala dosai","begin":7,"end":19,"name":"food"},{"value":"dosai","begin":14,"end":19,"name":"food"}]},{"text":"need cofee","entities":[{"value":"cofee","begin":5,"end":10,"name":"food"}]},{"text":"Get me some cofee","entities":[]},{"text":"I need  food\n","entities":[]}]
+
+
+Create Entity
+-----------------
+http://192.168.0.30:9080/gateway/entities/
+{
+	"name":"cusine",
+   "entity_values": [
+        {
+            "value": "indian",
+            "synonyms": [
+                "indian",
+                "Indian"
+            ]
+        }
+    ]
+}
+
+
+Get Entities 
+------------
+http://192.168.0.30:9080/gateway/entities/
+
+Get Specifc Entities 
+-------------------------
+http://192.168.0.30:9080/gateway/entities/662a0af6a09917422e5f3654
+
+Update Entity (PUT)
+---------------
+http://192.168.0.30:9080/gateway/entities/662a0af6a09917422e5f3654
+{"_id":{"$oid":"662a0af6a09917422e5f3654"},"name":"food","entity_values":[{"value":"dosai","synonyms":["masaladosai"]}]}
+
+{"_id":{"$oid":"662a0c11a09917422e5f3656"},"name":"orgin","entity_values":[{"value":"bangalore","synonyms":["bengaluru"]}]}
+
+{"_id":{"$oid":"662a0c11a09917422e5f3656"},"name":"orgin","entity_values":[{"value":"bangalore","synonyms":["jaynagar"," JPnagaer"," banaglore south"]},{"value":"delhi","synonyms":["new Deslhi"," Kailash nagaer"," palika bazar"]}]}
+Get Training Data
+------------------
+http://192.168.0.30:9080/gateway/train/662a01a2a09917422e5f3652/data
+
+Train (Build Models  - all models?)
+-----------------------------------
+http://192.168.0.30:9080/gateway/nlu/build_models
+Payload {}
+
+chat
+-----
+
+http://192.168.0.30:9080/gateway/api/v1
+{"currentNode":"","complete":null,"context":{},"parameters":[],"extractedParameters":{},"speechResponse":"","intent":{},"input":"/init_conversation","missingParameters":[]}
+
+{"currentNode":"","complete":true,"context":{},"parameters":[],"extractedParameters":{},"speechResponse":["Hi  "," What can i do for you ?"],"intent":{"object_id":"59aae7bd26f6f60007b06fb7","confidence":1,"id":"init_conversation"},"input":"need some food","missingParameters":[],"owner":"user","date":"2024-04-25T11:14:25.488Z"}
+
+{
+    "enterprise_name":"mitra",
+    "bot_name":"text",
+    "currentNode": "",
+    "complete": "None",
+	"sequence_id":0,
+    "context": {},
+    "parameters": [],
+    "extractedParameters": {},
+    "speechResponse": "",
+    "intent": {},
+    "input": "Hi",
+    "missingParameters": []
+}
+
+{
+    "enterprise_name": "mitra",
+    "bot_name": "text",
+    "currentNode": "cuisine",
+    "complete": false,
+    "sequence_id": 2,
+    "context": {},
+    "parameters": [
+        {
+            "name": "location",
+            "type": "free_text",
+            "required": true
+        },
+        {
+            "name": "cuisine",
+            "type": "free_text",
+            "required": true
+        }
+    ],
+    "extractedParameters": {
+        "location": "malleswaram"
+    },
+    "speechResponse": [
+        "Ok. ",
+        " What type cuisine are you looking for?"
+    ],
+    "intent": {
+        "object_id": "66f53987b8b6906dea1af873",
+        "confidence": 0.9847961046915221,
+        "id": "restaurant_search"
+    },
+    "input": "Looking for a restaurant in malleswaram",
+    "missingParameters": [
+        "cuisine"
+    ]
+}
