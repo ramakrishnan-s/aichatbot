@@ -1,0 +1,9 @@
+{
+		"name": "Default Fallback intent",
+		"enterprise_name" : "accessnetworks",
+		"bot_name" : "text",
+		"userDefined": false,
+		"apiTrigger": false,
+		"intentId": "fallback",
+		"speechResponse": "{{ \n\n[\n    \"Sorry ### I'm having trouble understanding you.\",\n    \"Hmm ### I cant handle that yet.\",\n    \"Can you please re-phrase your query ?\"\n] | random \n\n}}﻿\n\n"
+	}
