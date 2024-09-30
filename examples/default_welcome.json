@@ -1,0 +1,45 @@
+{
+		"name": "Welcome message",
+		"enterprise_name" : "accessnetworks",
+		"bot_name" : "text",
+		"enterprise_name" : "accessnetworks",
+		"bot_name" : "text",
+		"trainingData": [
+			{
+				"text": "hello there",
+				"entities": []
+			},
+			{
+				"text": "hey there",
+				"entities": []
+			},
+			{
+				"text": "hii",
+				"entities": []
+			},
+			{
+				"text": "heyy",
+				"entities": []
+			},
+			{
+				"text": "howdy",
+				"entities": []
+			},
+			{
+				"text": "hey",
+				"entities": []
+			},
+			{
+				"text": "hello",
+				"entities": []
+			},
+			{
+				"text": "hi",
+				"entities": []
+			}
+		],
+		"userDefined": false,
+		"apiTrigger": false,
+		"intentId": "init_conversation",
+		"speechResponse": "Hi {{context[\"username\"] }} ### What can i do for you ?"
+	}
