@@ -1,0 +1,23 @@
+	{
+		"name": "Thank you",
+		"enterprise_name": "accessnetworks",
+		"bot_name": "voice",
+		"trainingData": [
+			{
+				"text": "thank you iky",
+				"entities": []
+			},
+			{
+				"text": "thanks",
+				"entities": []
+			},
+			{
+				"text": "thank you very much",
+				"entities": []
+			}
+		],
+		"userDefined": true,
+		"apiTrigger": false,
+		"intentId": "thank_you",
+		"speechResponse": "I'm happy to help :)"
+	}
