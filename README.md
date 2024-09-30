@@ -112,7 +112,7 @@ restaurant search
     ]
 }
 ```
-Sample 
+
 ### without docker
 
 * Setup Virtualenv and install python requirements
